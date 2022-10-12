@@ -26,6 +26,7 @@ metadata:
   name: hello-world-service
   annotations:
     argocd.argoproj.io/sync-options: Validate=false
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   selector:
     app: hello-world
