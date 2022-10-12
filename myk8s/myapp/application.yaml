@@ -5,6 +5,7 @@ metadata:
   name: hello-world
   annotations:
     argocd.argoproj.io/sync-options: Validate=false
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   replicas: 1 
   template:
