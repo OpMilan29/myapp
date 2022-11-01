@@ -18,7 +18,8 @@ spec:
         app: mytest1
     spec:
       containers:
-      - image: nginx
+      - image: ubuntu
         name: nginx
+        commands: ["sleep","3600"]
         resources: {}
 status: {}
