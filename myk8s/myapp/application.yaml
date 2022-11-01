@@ -20,7 +20,7 @@ spec:
       containers:
       - image: ubuntu
         name: nginx
-        command: ["sleep","3600"]
+        command: ["sleep","3602"]
         resources: {}
 status: {}
 
