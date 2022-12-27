@@ -1,14 +1,11 @@
 pipeline {
   
-   agent {
-        node {
-            label 'Master'
-        }
-    }
+   agent any
   
   stages {
     
      stage('Git Checkout') {
+       agent any
             steps {
                 checkout([
                     $class: 'GitSCM', 
@@ -18,6 +15,7 @@ pipeline {
             }
         }
     stage('Docker build') {
+      agent any
       steps {
         sh  ''' 
         docker --version
