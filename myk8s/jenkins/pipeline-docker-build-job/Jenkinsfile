@@ -1,0 +1,18 @@
+pipeline {
+  agent {
+    node {
+      label 'Master'
+    }
+  }
+  
+  stages {
+    
+     stage('Git Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: 'master']], 
+                    userRemoteConfigs: [[url: 'git@github.com:OpMilan29/myapp.git']]
+                ])
+            }
+        }
