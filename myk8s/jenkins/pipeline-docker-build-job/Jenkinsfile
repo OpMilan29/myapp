@@ -15,7 +15,9 @@ pipeline {
     stage('Docker build') {
       steps {
         sh  ''' 
-        docker 
+        docker --version
+        pwd
+        sleep 20
         '''
         }
     }
