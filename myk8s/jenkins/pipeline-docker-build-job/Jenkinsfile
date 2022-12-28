@@ -7,11 +7,13 @@ pipeline {
      stage('Git Checkout') {
        agent any
             steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: 'master']], 
-                    userRemoteConfigs: [[url: 'git@github.com:OpMilan29/myapp.git']]
-                ])
+                sh '''
+                
+                echo "stage 1"
+                sleep 20
+                
+                '''
+             
             }
         }
     stage('Docker build') {
