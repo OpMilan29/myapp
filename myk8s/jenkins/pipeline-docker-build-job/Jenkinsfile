@@ -8,7 +8,7 @@ pipeline {
   
   stages {
     
-     stage('print stage') {
+     stage('') {
       
             steps {
                 sh '''
@@ -24,7 +24,7 @@ pipeline {
       
       steps {
         sh  ''' 
-        docker --version
+        docker build -t firstbuild .
         pwd
         sleep 20
         '''
