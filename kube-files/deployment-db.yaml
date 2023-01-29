@@ -22,6 +22,8 @@ spec:
       containers:
         - name: vprodb
           image: vprofile/vprofiledb:V1
+          args:
+            - "--ignore-db-dir=lost+found"
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
