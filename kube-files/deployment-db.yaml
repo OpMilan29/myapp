@@ -40,7 +40,6 @@ spec:
         zone: ap-south-1a
       volumes:
         - name: vpro-db-data
-          awsElasticBlockStore:
-            volumeID: vol-04ab07ebeb9074306
-            fsType: ext4
+          persistentVolumeClaim:
+            claimName: vpro-db-pvc
       restartPolicy: Always

@@ -7,11 +7,11 @@ spec:
   accessModes:
     - ReadWriteOnce
   awsElasticBlockStore:
-    fsType: xfs
-    volumeID: aws://ap-south-1a/vol-03799cad81454e762
-    partition: 1
+    fsType: ext4
+    volumeID: aws://ap-south-1a/vol-04ab07ebeb9074306
+    partition: 0
   capacity:
-    storage: 3Gi
+    storage: 5Gi
   persistentVolumeReclaimPolicy: Retain
   storageClassName: gp2-retain
   volumeMode: Filesystem
