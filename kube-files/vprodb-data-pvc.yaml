@@ -12,4 +12,4 @@ spec:
       storage: 3Gi
   storageClassName: local-storage
   volumeMode: Filesystem
-  volumeName: vpro-db-data
+  volumeName: vprodb-pv
