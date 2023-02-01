@@ -22,6 +22,7 @@ spec:
       containers:
         - name: vprodb
           image: vprofile/vprofiledb:V1
+
           args:
             - "--ignore-db-dir=lost+found"
           env:
@@ -38,7 +39,11 @@ spec:
               mountPath: /var/lib/mysql
 
       volumes:
-        - name: vprodb-pv
-          persistentVolumeClaim:
-            claimName: vpro-db-pvc
+        - name: vprodb-data
+          awsElasticBlockStore:
+            volumeID: "vol-04ab07ebeb9074306"
+            fsType: "ext4"
+      nodeSelector:
+        zone: ap-south-1a
+
       restartPolicy: Always
