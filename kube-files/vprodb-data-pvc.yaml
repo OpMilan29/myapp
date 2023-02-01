@@ -4,6 +4,7 @@ metadata:
   labels:
     app: vprodb
   name: vpro-db-pvc
+  namespace: testy
 spec:
   accessModes:
     - ReadWriteOnce

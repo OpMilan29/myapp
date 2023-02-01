@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vprodb
-  namespace: default
+  namespace: testy
   labels:
     app: vprodb
 spec:
@@ -36,8 +36,7 @@ spec:
           volumeMounts:
             - name: vprodb-pv
               mountPath: /var/lib/mysql
-      nodeSelector:
-        zone: ap-south-1a
+
       volumes:
         - name: vprodb-pv
           persistentVolumeClaim:
