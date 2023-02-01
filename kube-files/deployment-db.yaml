@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vprodb
-  namespace: testy
+
   labels:
     app: vprodb
 spec:
@@ -41,14 +41,14 @@ spec:
       volumes:
         - name: vprodb-data
           awsElasticBlockStore:
-            volumeID: "vol-0312e6a8abdcb6004"
+            volumeID: "vol-0e4d3dc64a42b48c3"
             fsType: "ext4"
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                  - key: topology.ebs.csi.aws.com/zone
+                  - key: topology.kubernetes.io/zone
                     operator: In
                     values:
                       - ap-south-1b
