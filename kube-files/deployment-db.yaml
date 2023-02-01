@@ -41,9 +41,16 @@ spec:
       volumes:
         - name: vprodb-data
           awsElasticBlockStore:
-            volumeID: "vol-04ab07ebeb9074306"
+            volumeID: "vol-0312e6a8abdcb6004"
             fsType: "ext4"
-      nodeSelector:
-        zone: ap-south-1a
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: topology.kubernetes.io/zone
+                    operator: In
+                    values:
+                      - ap-south-1b
 
       restartPolicy: Always
