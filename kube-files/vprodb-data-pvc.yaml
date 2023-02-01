@@ -11,6 +11,6 @@ spec:
   resources:
     requests:
       storage: 3Gi
-  storageClassName: local-storage
+  storageClassName: default
   volumeMode: Filesystem
   volumeName: vprodb-pv
