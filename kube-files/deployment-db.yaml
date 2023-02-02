@@ -48,9 +48,9 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                  - key: topology.kubernetes.io/zone
+                  - key: zone
                     operator: In
                     values:
-                      - ap-south-1b
+                      - ap-south-1a
 
       restartPolicy: Always
