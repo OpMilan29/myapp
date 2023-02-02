@@ -42,11 +42,11 @@ spec:
               "-c",
               "until nslookup vprodb; do echo waiting for my db; sleep 2; done;",
             ]
-        - name: init-db
+        - name: init-mem
           image: busybox
           command:
             [
               "sh",
               "-c",
-              "until nslookup vprocache01; do echo waiting for my db; sleep 2; done;",
+              "until nslookup vprocache01; do echo waiting for my memcached; sleep 2; done;",
             ]
